@@ -1,0 +1,27 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1;
+  }
+  .jumbotron {
+    text-align: right;
+    background-color: aqua;
+    color: black;
+    border-radius: 0;
+    border-bottom: 10px solid black;
+  }
+
+  .search{
+    text-align: left;
+    margin-bottom: 100px;
+  }
+
+  .weather{
+    text-align: right;
+    margin-bottom: 150px;
+  }
+
+  .forecast{
+    text-align: right;
+    margin-top: 50px;;
+  }
