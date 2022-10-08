@@ -5,10 +5,13 @@ body {
   }
   .jumbotron {
     text-align: right;
-    background-color: aqua;
-    color: black;
+    background-color: #00a1c9;
+    color: #005063;
     border-radius: 0;
     border-bottom: 10px solid black;
+  }
+  .display-3{
+    font-size: 34px;
   }
 
   .search{
@@ -23,5 +26,6 @@ body {
 
   .forecast{
     text-align: right;
-    margin-top: 50px;;
+    margin-top: 50px;
+    margin-bottom: 150px ;
   }
