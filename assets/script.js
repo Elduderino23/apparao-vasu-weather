@@ -29,7 +29,7 @@ function retrieveAPI() {
 
             console.log(data)
             for (let i = 0; i < 5; i++) {
-                renderForecastCard(data.list[i]) 
+                renderForecastCard(data.list[i], i) 
              }
 
             var lon = data.city.coord.lon
@@ -48,7 +48,7 @@ function retrieveAPI() {
                     
                 })
 
-                var dayOne = moment().add(1,'days').format("MMM Do YY") 
+                // var dayOne = moment().add(1,'days').format("MMM Do YY") 
 // var dayTwo = moment().add(2,'forecast-2').format("MMM Do YY")
 // var dayThree = moment().add(3,'forecast-3').format("MMM Do YY")
 // var dayFour = moment().add(4,'forecast-4').format("MMM Do YY")
@@ -58,12 +58,18 @@ function retrieveAPI() {
         })
 }
 
-function renderForecastCard(weatherObject){
+// function renderOriginForecastCard(todayWeather){
+//     var dayNext = moment().format("MMM Do YY") 
+// }
+
+function renderForecastCard(weatherObject,i){
     console.log(weatherObject)
+    var dayNext = moment().add(i+1,'days').format("MMM Do YY") 
 var forecastListEl = document.getElementById("js-forecast-list")
 var cardHTML = `
 <div class="card">
   <div class="card-body">
+  <p class="card-text">${dayNext}</p>
     <h5 class="card-title">${weatherObject.main.temp}/h5>
     <p class="card-text">temp: ${weatherObject.main.temp}</p>
     <p class="card-text">wind speed: ${weatherObject.wind.speed}</p>
