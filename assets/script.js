@@ -35,6 +35,13 @@ function retrieveAPI() {
                 .then(function (data) {
                     console.log(data)
                 })
+// var dayOne = moment().add(1,'day').format("MMM Do YY")
+// var dayTwo = moment().add(2,'day').format("MMM Do YY")
+// var dayThree = moment().add(3,'day').format("MMM Do YY")
+// var dayFour = moment().add(4,'day').format("MMM Do YY")
+// var dayFive = moment().add(5,'day').format("MMM Do YY")
+
+                
         })
 }
 
