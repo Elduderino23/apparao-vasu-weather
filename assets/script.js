@@ -1,5 +1,10 @@
 // var APIKey = cf1929056b460b4693a80b30482c21ed
 // var city;
+var dayOne
+var dayTwo
+var dayThree
+var dayFour
+var dayFive
 var fetchButton = document.getElementById('fetch-city')
 $(document).ready(function () {
     var weatherClock = function () {
@@ -23,6 +28,9 @@ function retrieveAPI() {
         .then(function (data) {
 
             console.log(data)
+            for (let i = 0; i < 5; i++) {
+                renderForecastCard(data.list[i]) 
+             }
 
             var lon = data.city.coord.lon
             var lat = data.city.coord.lat
@@ -34,16 +42,59 @@ function retrieveAPI() {
                 })
                 .then(function (data) {
                     console.log(data)
+                    // for (let i = 0; i < 5; i++) {
+                    //    renderForecastCard(data.list[i]) 
+                    // }
+                    
                 })
-// var dayOne = moment().add(1,'day').format("MMM Do YY")
-// var dayTwo = moment().add(2,'day').format("MMM Do YY")
-// var dayThree = moment().add(3,'day').format("MMM Do YY")
-// var dayFour = moment().add(4,'day').format("MMM Do YY")
-// var dayFive = moment().add(5,'day').format("MMM Do YY")
+
+// var dayOne = moment().add(1,'forecast-1').format("MMM Do YY")
+// var dayTwo = moment().add(2,'forecast-2').format("MMM Do YY")
+// var dayThree = moment().add(3,'forecast-3').format("MMM Do YY")
+// var dayFour = moment().add(4,'forecast-4').format("MMM Do YY")
+// var dayFive = moment().add(5,'forecast-5').format("MMM Do YY")
 
                 
         })
 }
+
+function renderForecastCard(weatherObject){
+    console.log(weatherObject)
+var forecastListEl = document.getElementById("js-forecast-list")
+var cardHTML = `
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">${weatherObject.main.temp}/h5>
+    <p class="card-text">temp: ${weatherObject.main.temp}</p>
+    <p class="card-text">wind speed: ${weatherObject.wind.speed}</p>
+    <p class="card-text">wind gust: ${weatherObject.wind.gust}</p>
+    <p class="card-text">humidity: ${weatherObject.main.humidity}</p>
+  </div>
+</div>
+`
+var listItem = document.createElement("li")
+listItem.innerHTML=cardHTML
+forecastListEl.appendChild(listItem)
+}
+
+// function renderForecastCard(todayWeatherObject){
+//     console.log(todayWeatherObject)
+// var forecastListEl = document.getElementById("fetch-weather")
+// var cardHTML = `
+// <div class="card">
+//   <div class="card-body">
+//     <h5 class="card-title">temp: ${todayWeatherObject.main.temp}>
+//     <p class="card-text">temp: ${todayWeatherObject.main.temp}</p>
+//     <p class="card-text">wind speed: ${todayWeatherObject.wind.speed}</p>
+//     <p class="card-text">wind gust: ${todayWeatherObject.wind.gust}</p>
+//     <p class="card-text">humidity: ${todayWeatherObject.main.humidity}</p>
+//   </div>
+// </div>
+// `
+// var listItem = document.createElement("li")
+// listItem.innerHTML=cardHTML
+// forecastListEl.appendChild(listItem)
+// }
 
 fetchButton.addEventListener('click', retrieveAPI)
 
