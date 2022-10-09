@@ -24,8 +24,8 @@ function retrieveAPI() {
 
             console.log(data)
 
-            var lon = data.coord.lon
-            var lat = data.coord.lat
+            var lon = data.city.coord.lon
+            var lat = data.city.coord.lat
             var requestNew = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=cf1929056b460b4693a80b30482c21ed'
 
             fetch(requestNew)
