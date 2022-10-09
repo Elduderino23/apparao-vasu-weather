@@ -48,19 +48,18 @@ function retrieveAPI() {
                     
                 })
 
-// var dayOne = moment().add(1,'forecast-1').format("MMM Do YY")
+                var dayOne = moment().add(1,'days').format("MMM Do YY") 
 // var dayTwo = moment().add(2,'forecast-2').format("MMM Do YY")
 // var dayThree = moment().add(3,'forecast-3').format("MMM Do YY")
 // var dayFour = moment().add(4,'forecast-4').format("MMM Do YY")
 // var dayFive = moment().add(5,'forecast-5').format("MMM Do YY")
-
+/* <link src="http://openweathermap.org/img/wn/10d@2x.png". */
                 
         })
 }
 
 function renderForecastCard(weatherObject){
     console.log(weatherObject)
-    
 var forecastListEl = document.getElementById("js-forecast-list")
 var cardHTML = `
 <div class="card">
