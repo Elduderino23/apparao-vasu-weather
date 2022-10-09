@@ -60,6 +60,7 @@ function retrieveAPI() {
 
 function renderForecastCard(weatherObject){
     console.log(weatherObject)
+    
 var forecastListEl = document.getElementById("js-forecast-list")
 var cardHTML = `
 <div class="card">
@@ -76,7 +77,8 @@ var listItem = document.createElement("li")
 listItem.innerHTML=cardHTML
 forecastListEl.appendChild(listItem)
 }
-
+// var day1 = moment().add(1,'day').format("MMM Do YY")
+// var day2 = moment().add(2,'day').format("MMM Do YY")
 // function renderForecastCard(todayWeatherObject){
 //     console.log(todayWeatherObject)
 // var forecastListEl = document.getElementById("fetch-weather")
