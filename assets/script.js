@@ -83,7 +83,7 @@ forecastListE0.appendChild(listItemOne)
 function renderForecastCard(weatherObject,i){
     console.log(weatherObject)
     var dayNext = moment().add(i+1,'days').format("MMM Do YY") 
-var forecastListEl = document.getElementById("js-forecast-list")
+var forecastListEl = document.getElementById("weather")
 var cardHTML = `
 <div class="card">
   <div class="card-body">
@@ -102,24 +102,24 @@ forecastListEl.appendChild(listItem)
 }
 // var day1 = moment().add(1,'day').format("MMM Do YY")
 // var day2 = moment().add(2,'day').format("MMM Do YY")
-// function renderForecastCard(todayWeatherObject){
-//     console.log(todayWeatherObject)
-// var forecastListEl = document.getElementById("fetch-weather")
-// var cardHTML = `
-// <div class="card">
-//   <div class="card-body">
-//     <h5 class="card-title">temp: ${todayWeatherObject.main.temp}>
-//     <p class="card-text">temp: ${todayWeatherObject.main.temp}</p>
-//     <p class="card-text">wind speed: ${todayWeatherObject.wind.speed}</p>
-//     <p class="card-text">wind gust: ${todayWeatherObject.wind.gust}</p>
-//     <p class="card-text">humidity: ${todayWeatherObject.main.humidity}</p>
-//   </div>
-// </div>
-// `
-// var listItem = document.createElement("li")
-// listItem.innerHTML=cardHTML
-// forecastListEl.appendChild(listItem)
-// }
+function renderForecastCard(todayWeatherObject){
+    console.log(todayWeatherObject)
+var forecastListEl = document.getElementById("js-forecast-list")
+var cardHTML = `
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">temp: ${todayWeatherObject.main.temp}>
+    <p class="card-text">temp: ${todayWeatherObject.main.temp}</p>
+    <p class="card-text">wind speed: ${todayWeatherObject.wind.speed}</p>
+    <p class="card-text">wind gust: ${todayWeatherObject.wind.gust}</p>
+    <p class="card-text">humidity: ${todayWeatherObject.main.humidity}</p>
+  </div>
+</div>
+`
+var listItem = document.createElement("li")
+listItem.innerHTML=cardHTML
+forecastListEl.appendChild(listItem)
+}
 
 fetchButton.addEventListener('click', retrieveAPI)
 
