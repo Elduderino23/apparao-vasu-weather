@@ -43,10 +43,7 @@ function retrieveAPI() {
                 .then(function (data) {
                     renderOriginForecastCard(data)
                     console.log(data)
-                    // weather.textContent = data.main.temp
-                    // for (let i = 0; i < 5; i++) {
-                    //    renderForecastCard(data.list[i]) 
-                    // }
+                    
                     
                 })
 
@@ -124,16 +121,12 @@ forecastListEl.appendChild(listItem)
 // forecastListEl.appendChild(listItem)
 // }
 // $("#fetch-city").on.("click" "submit", )
-$(".search").on("click", function(){
-    var id = $(this).attr("id")
-    console.log(id.split("-")[1])
-    var text = $("#fetch-city"+(id.split("-")[1])).val()
-    console.log(text)
-    localStorage.setItem(id,text)
-  })
+
 
 fetchButton.addEventListener('click', retrieveAPI)
-
+let search = $(".searchInput").val();
+let local = localStorage.setItem(retrieveAPI, search.name);
+                    retrieveAPI = retrieveAPI + 1;
 // cf1929056b460b4693a80b30482c21ed
 // f64f9e2d4fda40afd330c539b14a2d45
 // ${src="http://openweathermap.org/img/wn/"+weatherObject.list[0].weather[0].icon+"@2x.png"}
