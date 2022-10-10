@@ -124,8 +124,8 @@ forecastListEl.appendChild(listItem)
 
 
 fetchButton.addEventListener('click', retrieveAPI)
-let search = $(".searchInput").val();
-let local = localStorage.setItem(retrieveAPI, search.name);
+let search = $(".fetchBtn").val()
+let local = localStorage.setItem(retrieveAPI, search);
                     retrieveAPI = retrieveAPI + 1;
 // cf1929056b460b4693a80b30482c21ed
 // f64f9e2d4fda40afd330c539b14a2d45
