@@ -42,6 +42,7 @@ function retrieveAPI() {
                 })
                 .then(function (data) {
                     console.log(data)
+                    // weather.textContent = data.main.temp
                     // for (let i = 0; i < 5; i++) {
                     //    renderForecastCard(data.list[i]) 
                     // }
@@ -61,7 +62,7 @@ function retrieveAPI() {
 function renderOriginForecastCard(todayWeather){
     console.log(todayWeather)
     var dayOne = moment().format("MMM Do YY") 
-var forecastListE0 = document.getElementById("js-weather-list")
+var forecastListE0 = document.getElementById("weather")
 var cardOneHTML = `
 <div class="card">
   <div class="card-body">
