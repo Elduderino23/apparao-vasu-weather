@@ -68,6 +68,7 @@ var cardOneHTML = `
 <div class="card">
   <div class="card-body">
   <p class="card-text">${dayOne}</p>
+  <p class="card-text">${document.getElementById("city").value}</p>
   <img class="card-title"src=${"http://openweathermap.org/img/wn/"+todayWeather.weather[0].icon+"@2x.png"}
     <p class="card-text">temp: ${todayWeather.main.temp}</p>
     <p class="card-text">wind speed: ${todayWeather.wind.speed}</p>
@@ -80,7 +81,7 @@ var listItemOne = document.createElement("li")
 listItemOne.innerHTML=cardOneHTML
 forecastListE0.appendChild(listItemOne)
 }
-
+// document.getElementById("city").value
 function renderForecastCard(weatherObject,i){
     console.log(weatherObject)
     var dayNext = moment().add(i+1,'days').format("MMM Do YY") 
@@ -89,6 +90,7 @@ var cardHTML = `
 <div class="card">
   <div class="card-body">
   <p class="card-text">${dayNext}</p>
+  <p class="card-text">${document.getElementById("city").value}</p>
     <img class="card-title"src=${"http://openweathermap.org/img/wn/"+weatherObject.weather[0].icon+"@2x.png"}>
     <p class="card-text">temp: ${weatherObject.main.temp}</p>
     <p class="card-text">wind speed: ${weatherObject.wind.speed}</p>
@@ -121,6 +123,7 @@ forecastListEl.appendChild(listItem)
 // listItem.innerHTML=cardHTML
 // forecastListEl.appendChild(listItem)
 // }
+// $("#fetch-city").on.("click" )
 
 fetchButton.addEventListener('click', retrieveAPI)
 
