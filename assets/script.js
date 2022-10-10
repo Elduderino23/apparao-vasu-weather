@@ -123,7 +123,14 @@ forecastListEl.appendChild(listItem)
 // listItem.innerHTML=cardHTML
 // forecastListEl.appendChild(listItem)
 // }
-// $("#fetch-city").on.("click" )
+// $("#fetch-city").on.("click" "submit", )
+$(".search").on("click", function(){
+    var id = $(this).attr("id")
+    console.log(id.split("-")[1])
+    var text = $("#fetch-city"+(id.split("-")[1])).val()
+    console.log(text)
+    localStorage.setItem(id,text)
+  })
 
 fetchButton.addEventListener('click', retrieveAPI)
 
